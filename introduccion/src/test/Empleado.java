@@ -19,10 +19,11 @@ public class Empleado {
     }
 
     // constructor sobrecargado
-    public Empleado(String id, String nombres, String cargo){
+    public Empleado(String id, String nombres, String apellidos, String cargo) {
         System.out.println("Me crearon con el constructor 2");
         this.id = id;
         this.nombres = nombres;
+        this.apellidos = apellidos;
         this.cargo = cargo;
     }
 
@@ -100,5 +101,14 @@ public class Empleado {
 
     public void setEps(EPS eps) {
         this.eps = eps;
+    }
+
+    @Override
+    public String toString() {
+        return "id='" + id + '\'' +
+                ", nombres='" + nombres + '\'' +
+                ", apellidos='" + apellidos + '\'' +
+                ", cargo='" + cargo + '\'' +
+                ", eps=" + eps;
     }
 }

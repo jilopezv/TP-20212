@@ -16,7 +16,7 @@ public class Principal {
 
 
         // declaración de variables de tipos de datos personalizados
-        Empleado e = new Empleado("123", "Empleado 1", "Programador");
+        Empleado e = new Empleado("123", "Empleado", "1", "Programador");
 
         e.setSalario(2_000_000);
         // e.eps = "La peor eps";
