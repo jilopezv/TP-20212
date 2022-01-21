@@ -1,18 +1,13 @@
-public class Animal {
+public abstract class Animal {
 
-    private String nombre;
-
-    public Animal(){
-        this.nombre = "NN";
-    }
+    // # puede ser accedido por la misma clase y las hijas
+    protected String nombre;
 
     public Animal(String nombre){
         this.nombre = nombre;
     }
 
-    public void hacerRuido(){
-        System.out.println("Hago ruido como animal");
-    }
+    public abstract void hacerRuido();
 
     public void comer(){
         System.out.println("Como como animal");
