@@ -54,6 +54,22 @@ public class Principal {
         System.out.println(r1 instanceof Gato);
 
 
+        // ligadura dinámica
+        Animal h = new Humano("Felipe");
+        h.hacerRuido();
+
+        // ligadura dinámica
+        Volable v = new Ave("Pájaro");
+
+        Volable humanoV = new Humano("cualquier gato");
+
+        // casting de Volable a Animal
+        Animal animalVolable = (Animal) v;
+
+        Ave aveConcreta = new Ave("Pájaro 2");
+
+
+
 
 
     }
