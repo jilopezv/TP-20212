@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.*;
 
 public class Principal {
@@ -74,6 +75,13 @@ public class Principal {
 
         System.out.println(mapaEstudiantes.get(111));
 
+        Date d = new Date();
+        System.out.println(d.getTime());
+
+        LocalDate localDate = LocalDate.now();
+        System.out.println(localDate.toString());
+        localDate.plusDays(5);
+        
 
 
 
