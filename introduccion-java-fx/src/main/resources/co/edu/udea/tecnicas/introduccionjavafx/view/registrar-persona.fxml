@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <VBox alignment="CENTER" spacing="10.0" xmlns="http://javafx.com/javafx/11.0.14-internal"
       xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="co.edu.udea.tecnicas.introduccionjavafx.controller.HelloController">
+      fx:controller="co.edu.udea.tecnicas.introduccionjavafx.controller.RegistrarPersonaController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
@@ -27,5 +27,8 @@
 
     <Button onAction="#cmdGuardar_action" text="Guardar"/>
     <Label fx:id="lblResultado"/>
+
+    <Button onAction="#cmdImprimirDatos_action" text="Imprimir datos"/>
+
 
 </VBox>
