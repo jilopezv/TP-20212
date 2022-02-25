@@ -1,6 +1,8 @@
 package co.edu.udea.tecnicas.introduccionjavafx.controller;
 
 import co.edu.udea.tecnicas.introduccionjavafx.bsn.PersonaBsn;
+import co.edu.udea.tecnicas.introduccionjavafx.bsn.exception.PersonaYaExisteException;
+import co.edu.udea.tecnicas.introduccionjavafx.model.Persona;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -11,6 +13,8 @@ public class RegistrarPersonaController {
 
     @FXML
     private TextField txtIdentificacion;
+    @FXML
+    private TextField txtNombres;
 
     @FXML
     private Label lblResultado;
@@ -27,23 +31,31 @@ public class RegistrarPersonaController {
         lblResultado.setText("Ya todo fue creado");
     }
 
-
     public void cmdGuardar_action() {
         try {
-            Integer edadIngresada = Integer.parseInt(txtIdentificacion.getText());
-            personaBsn.guardarPersona(edadIngresada);
+            Integer idIngresado = Integer.parseInt(txtIdentificacion.getText());
+            String nombresIngresados = txtNombres.getText();
+
+            Persona personaNueva = new Persona(idIngresado, nombresIngresados);
+
+            personaBsn.guardarPersona(personaNueva);
             lblResultado.setText("Transacción realizada correctamente");
             // txtIdentificacion.setText("");
-            txtIdentificacion.clear();
         } catch (NumberFormatException nfe) {
             System.out.println("Excepción controlada");
-            nfe.printStackTrace();
             lblResultado.setText("¡Sólo números por favor!");
+        } catch (PersonaYaExisteException e) {
+            System.out.println("Excepción controlada");
+            lblResultado.setText(e.getMessage());
+        } finally {
+            txtIdentificacion.clear();
+            txtNombres.clear();
         }
+
     }
 
     public void cmdImprimirDatos_action() {
-        List<Integer> personas = personaBsn.consultarPersonas();
+        List<Persona> personas = personaBsn.consultarPersonas();
         personas.forEach(System.out::println);
         /*
             for(int i=0; i<personas.size(); i++){

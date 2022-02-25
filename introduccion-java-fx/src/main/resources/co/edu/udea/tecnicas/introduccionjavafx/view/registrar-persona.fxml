@@ -25,6 +25,11 @@
         <TextField fx:id="txtIdentificacion"/>
     </HBox>
 
+    <HBox alignment="CENTER" prefWidth="200.0" spacing="10.0">
+        <Label prefWidth="200.0" text="Nombres:"/>
+        <TextField fx:id="txtNombres"/>
+    </HBox>
+
     <Button onAction="#cmdGuardar_action" text="Guardar"/>
     <Label fx:id="lblResultado"/>
 

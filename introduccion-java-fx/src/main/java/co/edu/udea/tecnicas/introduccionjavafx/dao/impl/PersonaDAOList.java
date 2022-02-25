@@ -2,31 +2,32 @@ package co.edu.udea.tecnicas.introduccionjavafx.dao.impl;
 
 import co.edu.udea.tecnicas.introduccionjavafx.dao.PersonaDAO;
 import co.edu.udea.tecnicas.introduccionjavafx.dao.exception.DatosRepetidosException;
+import co.edu.udea.tecnicas.introduccionjavafx.model.Persona;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class PersonaDAOList implements PersonaDAO {
 
-    private static final List<Integer> personas = new ArrayList<>();
+    private static final List<Persona> personas = new ArrayList<>();
 
     @Override
-    public void guardarPersona(Integer id) throws DatosRepetidosException {
-        if (consultarPersonaPorId(id)) {
+    public void guardarPersona(Persona persona) throws DatosRepetidosException {
+        if (consultarPersonaPorId(persona.getId())) {
             throw new DatosRepetidosException();
         }
-        personas.add(id);
+        personas.add(persona);
     }
 
     @Override
-    public List<Integer> consultarPersonas() {
+    public List<Persona> consultarPersonas() {
         // TODO retornar una copia
         return personas;
     }
 
     public boolean consultarPersonaPorId(Integer id) {
-        for (Integer persona : personas) {
-            if (persona.equals(id)) {
+        for (Persona persona : personas) {
+            if (persona.getId().equals(id)) {
                 return true;
             }
         }
