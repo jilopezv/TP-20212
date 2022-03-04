@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="vboxPrincipal" alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="10.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.udea.tecnicas.introduccionjavafx.controller.ListarPersonasController">
+
+    <Label text="Listado de personas" />
+
+    <TableView fx:id="tblPersonas">
+        <columns>
+            <TableColumn fx:id="clmIdentificacion" text="Identificación" />
+            <TableColumn fx:id="clmNombres" text="Nombres" />
+        </columns>
+      <columnResizePolicy>
+         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+      </columnResizePolicy>
+    </TableView>
+
+    <HBox alignment="TOP_RIGHT">
+        <Button onAction="#cmdRegresar_action" text="Regresar" />
+      <padding>
+         <Insets left="10.0" right="10.0" />
+      </padding>
+    </HBox>
+   <padding>
+      <Insets bottom="10.0" top="10.0" />
+   </padding>
+
+</VBox>

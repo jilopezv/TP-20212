@@ -1,16 +1,23 @@
 package co.edu.udea.tecnicas.introduccionjavafx.controller;
 
+import co.edu.udea.tecnicas.introduccionjavafx.HelloApplication;
 import co.edu.udea.tecnicas.introduccionjavafx.bsn.PersonaBsn;
 import co.edu.udea.tecnicas.introduccionjavafx.bsn.exception.PersonaYaExisteException;
 import co.edu.udea.tecnicas.introduccionjavafx.model.Persona;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
-import java.util.List;
+import java.io.IOException;
 
 public class RegistrarPersonaController {
 
+    @FXML
+    private VBox vboxPrincipal;
     @FXML
     private TextField txtIdentificacion;
     @FXML
@@ -54,10 +61,19 @@ public class RegistrarPersonaController {
 
     }
 
-    public void cmdImprimirDatos_action() {
+    public void cmdIrAVisualizacion_action() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("view/listar-personas.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 300);
+        Stage stage = (Stage) this.txtIdentificacion.getScene().getWindow();
+
+        stage.setTitle("Listado de personas registradas");
+        stage.setScene(scene);
+        // stage.show();
+
+        /*
         List<Persona> personas = personaBsn.consultarPersonas();
         personas.forEach(System.out::println);
-        /*
+
             for(int i=0; i<personas.size(); i++){
                 System.out.println(personas.get(i));
             }
