@@ -18,7 +18,7 @@ public class ContenedorPrincipalController {
     }
 
     public void mnuAgregarRegistro_action() throws IOException {
-        AnchorPane agregarRegistro = FXMLLoader.load(EjemploBorderPane.class.getResource("view/agregar-registro.fxml"));
+        AnchorPane agregarRegistro = FXMLLoader.load(EjemploBorderPane.class.getResource("view/agregar-usuario.fxml"));
         contenedorPrincipal.setCenter(agregarRegistro);
     }
 
