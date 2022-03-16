@@ -93,7 +93,8 @@ public class AgregarUsuarioController {
                 txtIdentificacion.requestFocus();
                 return;
             }
-            this.tblUsuarios.refresh();
+            this.tblUsuarios.getItems().add(usuario);
+            // this.tblUsuarios.refresh();
             // this.cargarListaUsuarios();
             this.limpiarCampos();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
