@@ -1,6 +1,7 @@
 package co.edu.udea.tecnicas.ejemploborderpane.dao;
 
 import co.edu.udea.tecnicas.ejemploborderpane.dao.exception.RegistroDuplicadoException;
+import co.edu.udea.tecnicas.ejemploborderpane.model.Direccion;
 import co.edu.udea.tecnicas.ejemploborderpane.model.Usuario;
 
 import java.util.List;

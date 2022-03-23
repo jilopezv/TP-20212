@@ -17,10 +17,16 @@ public class ContenedorPrincipalController {
         System.exit(0);
     }
 
-    public void mnuAgregarRegistro_action() throws IOException {
+    public void mnuAgregarUsuario_action() throws IOException {
         AnchorPane agregarRegistro = FXMLLoader.load(EjemploBorderPane.class.getResource("view/agregar-usuario.fxml"));
         contenedorPrincipal.setCenter(agregarRegistro);
     }
+
+    public void mnuAgregarDireccion_action() throws IOException {
+        AnchorPane agregarRegistro = FXMLLoader.load(EjemploBorderPane.class.getResource("view/agregar-direccion.fxml"));
+        contenedorPrincipal.setCenter(agregarRegistro);
+    }
+
 
     public void mnuEliminarRegistro_action() throws IOException {
         AnchorPane eliminarRegistro = FXMLLoader.load(EjemploBorderPane.class.getResource("view/eliminar-registro.fxml"));
