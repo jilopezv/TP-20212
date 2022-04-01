@@ -33,5 +33,9 @@ public class ContenedorPrincipalController {
         contenedorPrincipal.setCenter(eliminarRegistro);
     }
 
+    public void mnuVisualizarImagenes_action() throws IOException {
+        AnchorPane visualizadorImagenes = FXMLLoader.load(EjemploBorderPane.class.getResource("view/visualizador-imagenes.fxml"));
+        contenedorPrincipal.setCenter(visualizadorImagenes);
+    }
 
 }

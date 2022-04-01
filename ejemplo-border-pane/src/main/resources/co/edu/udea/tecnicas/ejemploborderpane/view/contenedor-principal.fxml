@@ -20,6 +20,11 @@
                         <MenuItem mnemonicParsing="false" onAction="#mnuEliminarRegistro_action" text="Eliminar usuario" />
                     </items>
                 </Menu>
+                <Menu mnemonicParsing="false" text="Imágenes">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#mnuVisualizarImagenes_action" text="Visualizar" />
+                    </items>
+                </Menu>
                 <Menu mnemonicParsing="false" text="Ayuda">
                     <items>
                         <MenuItem mnemonicParsing="false" text="About" />
