@@ -5,6 +5,8 @@ import co.edu.udea.tecnicas.ejemploborderpane.dao.exception.RegistroDuplicadoExc
 import co.edu.udea.tecnicas.ejemploborderpane.dao.impl.DireccionDAOFile;
 import co.edu.udea.tecnicas.ejemploborderpane.model.Direccion;
 
+import java.util.List;
+
 public class DireccionBsn {
     private DireccionDAO direccionDAO;
 
@@ -18,5 +20,9 @@ public class DireccionBsn {
         }catch (RegistroDuplicadoException rde){
             rde.printStackTrace();
         }
+    }
+
+    public List<Direccion> consultarDirecciones(Integer identificacion) {
+        return direccionDAO.consultarDireccionesUsuario(identificacion);
     }
 }

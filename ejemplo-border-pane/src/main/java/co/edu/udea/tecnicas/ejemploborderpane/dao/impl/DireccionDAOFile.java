@@ -86,6 +86,27 @@ public class DireccionDAOFile implements DireccionDAO {
         return null;
     }
 
+    @Override
+    public List<Direccion> consultarDireccionesUsuario(Integer idUsuario) {
+        try {
+            FileReader fileReader = new FileReader(direccionesBD);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String registro;
+            List<Direccion> direccionesUsuario = new ArrayList<>();
+            while ((registro = bufferedReader.readLine()) != null) {
+                Direccion direccion = parseDireccionFromString(registro);
+                if (direccion.getUsuario().getIdentificacion().equals(idUsuario)) {
+                    direccionesUsuario.add(direccion);
+                }
+            }
+            bufferedReader.close();
+            return direccionesUsuario;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     private Direccion parseDireccionFromString(String registro) {
         String[] partes = registro.split(";");
         Usuario usuario = this.usuarioDAO.consultarUsuarioPorId(Integer.parseInt(partes[0]));

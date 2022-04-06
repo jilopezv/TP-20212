@@ -13,4 +13,5 @@ public interface DireccionDAO {
 
     Direccion consultarDireccionPorIdUsuarioYNombreDireccion(Integer idUsuario, String nombreDireccion);
 
+    List<Direccion> consultarDireccionesUsuario(Integer identificacion);
 }
